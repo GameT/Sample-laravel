@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Auth;
 
 class UserController extends Controller
 {
@@ -15,7 +16,11 @@ class UserController extends Controller
 
     public function show(User $user)
     {
-        return view('users.show',compact('user'));
+        if(Auth::check()) {
+            return view('users.show',compact('user'));
+        } else {
+            return redirect()->route('login');
+        }
     }
 
     public function store(Request $request)
@@ -30,6 +35,7 @@ class UserController extends Controller
             'email' => $request->email,
             'password' => bcrypt($request->password)
         ]);
+        Auth::login($user);
         session()->flash('success','恭喜加入联盟！');
         return redirect()->route('users.show',[$user]);
     }

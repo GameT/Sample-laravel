@@ -6,7 +6,7 @@
         <p class="lead">请前往我的<a href="http://wangzhenyu.tk">个人站观摩</a></p>
         <p>万里长征第一步！</p>
         <p>
-            <a class="btn btn-lg btn-success" href="{{ route('users.store') }}" role="button">现在注册</a>
+            <a class="btn btn-lg btn-success" href="{{ route('users.create') }}" role="button">现在注册</a>
         </p>
     </div>
 @stop
