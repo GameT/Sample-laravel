@@ -12,11 +12,11 @@
                     {{ csrf_field() }}
                     <div class="form-group">
                         <lable for="email" >邮箱：</lable>
-                        <input type="text" name="email" value="{{ old('email') }}" >
+                        <input type="text" class="form-control" name="email" value="{{ old('email') }}" >
                     </div>
                     <div class="form-group">
-                        <lable for="password" >密码：</lable>
-                        <input type="password" name="password" value="{{ old('password') }}" >
+                        <lable for="password" >密码：(<a href="{{ route('password.request') }}">忘记密码</a>)</lable>
+                        <input type="password" class="form-control" name="password" value="{{ old('password') }}" >
                     </div>
                     <div class="checkbox">
                         <label><input type="checkbox" name="remember" >记住我</label>
