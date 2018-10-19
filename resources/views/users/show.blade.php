@@ -12,6 +12,10 @@
             </div>
         <div>
         <div class="col-md-12">
+            @if(Auth::check())
+                @include('users._follower_form')
+            @endif
+
             @if(count($statuses))
                 <ol class="statuses">
                     @foreach($statuses as $status)
